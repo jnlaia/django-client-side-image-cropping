@@ -73,8 +73,8 @@ $(document).ready(function($) {
                 window.dcsic_wrapper.addClass("has_image");
             });
         });
-        $(".dcsic_left").click(function(e) { window.dcsic_cropobj.croppie('rotate', 90); });
-        $(".dcsic_right").click(function(e) { window.dcsic_cropobj.croppie('rotate', -90); });
+        $(".dcsic_left").click(function(e) { window.dcsic_cropobj.croppie('rotate', 5); });
+        $(".dcsic_right").click(function(e) { window.dcsic_cropobj.croppie('rotate', -5); });
     }
     initialize_cropping_elements();
 });

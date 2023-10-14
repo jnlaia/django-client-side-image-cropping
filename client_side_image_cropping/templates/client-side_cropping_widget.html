@@ -12,11 +12,11 @@
             {% trans "Choose other image" %}
         </label>
     </div>
-{% if input_clearable %}
+    {% if input_clearable %}
     <div class="btn-group btn-group-delete-img" role="group" aria-label="Image Selection" style="margin-top: 10px;">
         <label class="btn btn-secondary dcsic_delete_image" style="padding: 5px 10px; border-radius: 5px;">{% trans "Delete image" %}</label>
-{% endif %}
     </div>
+    {% endif %}
 </div>
 <div class="dcsic_overlay"><div class="dcsic_dialog">
     <div class="dcsic_croppie_container"></div>

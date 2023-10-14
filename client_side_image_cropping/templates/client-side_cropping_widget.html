@@ -2,13 +2,21 @@
 
 <div class="dcsic_wrapper{% if current_img_url %} has_image{% endif %}" data-res-width="{{ widget.res_width }}" data-res-height="{{ widget.res_height }}" data-res-format="{{ widget.res_format }}" data-res-quality="{{ widget.res_quality }}">
     <input type="hidden" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}{% if original_uploaded_data %} value="{{ original_uploaded_data }}"{% endif %}>
-    <img src="{{ current_img_url }}" class="dcsic_current_img" style="width: {{ widget.preview_width }}px; height: {{ widget.preview_height }}px " />
-    <label>
-        <span class="dcsic_choose_img">{% trans "Choose image" %}</span>
-        <span class="dcsic_choose_other_img">{% trans "Choose other image" %}</span>
-        <input type="file" class="dcsic_file_input" accept="image/*"/>
-    </label>
-    {% if input_clearable %}<span class="dcsic_delete_image">{% trans "Delete image" %}</span>{% endif %}
+    <img src="{{ current_img_url }}" class="dcsic_current_img" style="width: {{ widget.preview_width }}px; height: {{ widget.preview_height }}px" />
+    <div class="btn-group btn-group-choose-img" role="group" aria-label="Image Selection">
+        <input type="file" id="file_input-{{ widget.name }}" class="dcsic_file_input" accept="image/*" style="display: none;" />
+        <label for="file_input-{{ widget.name }}" class="btn btn-secondary dcsic_choose_img" style="padding: 5px 10px; border-radius: 5px;">
+            {% trans "Choose image" %}
+        </label>
+        <label for="file_input-{{ widget.name }}" class="btn btn-secondary dcsic_choose_other_img" style="padding: 5px 10px; border-radius: 5px;">
+            {% trans "Choose other image" %}
+        </label>
+    </div>
+{% if input_clearable %}
+    <div class="btn-group btn-group-delete-img" role="group" aria-label="Image Selection" style="margin-top: 10px;">
+        <label class="btn btn-secondary dcsic_delete_image" style="padding: 5px 10px; border-radius: 5px;">{% trans "Delete image" %}</label>
+{% endif %}
+    </div>
 </div>
 <div class="dcsic_overlay"><div class="dcsic_dialog">
     <div class="dcsic_croppie_container"></div>

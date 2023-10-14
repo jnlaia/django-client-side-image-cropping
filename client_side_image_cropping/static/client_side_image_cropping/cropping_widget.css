@@ -18,6 +18,7 @@
 .dcsic_wrapper.has_image .dcsic_choose_other_img, .dcsic_wrapper.has_image .dcsic_delete_image { display: inline; }
 .dcsic_wrapper.has_image .dcsic_current_img { display: inline; }
 .dcsic_wrapper.has_image .dcsic_choose_img { display: none; }
+.dcsic_wrapper.has_image .btn-group-choose-img { margin-top: 10px; }
 
 .dcsic_overlay { display: none; background-color: rgba(0,0,0,.7); align-items: center; justify-content: center;
   position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 10000; }
